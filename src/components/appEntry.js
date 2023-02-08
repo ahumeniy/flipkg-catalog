@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function AppEntry() {
+function AppEntry(props) {
   return (
     <div>
       <Link to={`${props.app.Owner}/${props.app.Name}`}>{props.app.id}</Link>
