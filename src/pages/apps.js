@@ -14,7 +14,7 @@ function AppsPage() {
   return (
     <>
       <h1>Applications</h1>
-      <div>{appList & appList.map((app) => <AppEntry key={app.id} app={app} />)}</div>
+      <div>{appList && appList.map((app) => <AppEntry key={app.id} app={app} />)}</div>
     </>
   );
 }
