@@ -2,19 +2,19 @@ import { useEffect, useState } from "react";
 import AppEntry from "../components/appEntry";
 
 function AppsPage() {
-  const [apps, setApps] = useState([]);
+  const [appList, setAppList] = useState([]);
 
   useEffect(() => {
     (async function () {
       const { apps } = await (await fetch(`/api/GetApps`)).json();
-      setApps(apps);
+      setAppList(apps);
     })();
-  });
+  }, []);
 
   return (
     <>
       <h1>Applications</h1>
-      <div>{apps & apps.map((app) => <AppEntry key={app.id} app={app} />)}</div>
+      <div>{appList & appList.map((app) => <AppEntry key={app.id} app={app} />)}</div>
     </>
   );
 }
