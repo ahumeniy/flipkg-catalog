@@ -1,8 +1,16 @@
-import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import AdminPage from './pages/admin';
+import AppsPage from './pages/apps';
+
+const router = createBrowserRouter([
+  { path: '/', element: <AppsPage /> },
+  { path: '/admin', element: <AdminPage /> }
+]);
 
 function App() {
-  const value = 'World';
-  return <div>Hello {value}</div>;
+  return (
+    <RouterProvider router={router} />
+  );
 }
 
 export default App;
