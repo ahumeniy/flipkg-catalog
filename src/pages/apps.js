@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
+import AppEntry from "../components/appEntry";
 
 function AppsPage() {
-  const [data, setData] = useState("");
+  const [apps, setApps] = useState("");
 
   useEffect(() => {
     (async function () {
-      const { text } = await (await fetch(`/api/GetApps`)).json();
-      setData(text);
+      const { apps } = await (await fetch(`/api/GetApps`)).json();
+      setApps(apps);
     })();
   });
 
   return (
     <>
       <h1>Applications</h1>
-      <div>{data}</div>
+      <div>{ apps & apps.map((app) => (<AppEntry app={app} />))}</div>
     </>
   );
 }
