@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AppEntry from "../components/appEntry";
 
 function AppsPage() {
-  const [apps, setApps] = useState("");
+  const [apps, setApps] = useState([]);
 
   useEffect(() => {
     (async function () {
@@ -14,7 +14,7 @@ function AppsPage() {
   return (
     <>
       <h1>Applications</h1>
-      <div>{ apps & apps.map((app) => (<AppEntry app={app} />))}</div>
+      <div>{apps & apps.map((app) => <AppEntry key={app.id} app={app} />)}</div>
     </>
   );
 }
