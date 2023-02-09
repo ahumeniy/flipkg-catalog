@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import AppEntry from "../components/appEntry";
 import { getApps } from "../loaders/Apps";
@@ -17,7 +16,7 @@ function AppsPage() {
   return (
     <>
       <h1>Applications</h1>
-      {owner && <Link to="/">Go back</Link>}
+      {owner && <Link to="/">All Apps</Link>}
       <div>{appList && appList.map((app) => <AppEntry key={app.id} app={app} />)}</div>
     </>
   );
